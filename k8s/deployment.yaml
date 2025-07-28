@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: busapp
-        image: your-dockerhub-username/busapp:latest
+        image: rajijay/busapp:latest
         ports:
         - containerPort: 8080
