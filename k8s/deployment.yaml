@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busapp
+  template:
+    metadata:
+      labels:
+        app: busapp
+    spec:
+      containers:
+      - name: busapp
+        image: your-dockerhub-username/busapp:latest
+        ports:
+        - containerPort: 8080
