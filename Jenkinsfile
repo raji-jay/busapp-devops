@@ -24,7 +24,7 @@ pipeline {
             steps {
                 bat 'docker build -t %DOCKER_HUB_USER%/%IMAGE_NAME%:%IMAGE_TAG% .'
 
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-cred', usernameVariable: 'DOCKER_HUB_USER', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_HUB_USER', passwordVariable: 'DOCKER_PASSWORD')]) {
                     bat 'echo %DOCKER_PASSWORD% | docker login -u %DOCKER_HUB_USER% --password-stdin'
                     bat 'docker push %DOCKER_HUB_USER%/%IMAGE_NAME%:%IMAGE_TAG%'
                 }
