@@ -8,6 +8,6 @@ public class BusController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to BusApp - Raji!";
+        return "Welcome to BusApp - Raji - 07/08/2025 15:04!";
     }
 }
